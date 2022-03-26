@@ -15,9 +15,20 @@ const Shop = () => {
     }, []);
 
     const handleAddToCart = chosenProduct => {
-        // console.log(chosenProduct);
         const newCart = [...cart, chosenProduct];
         setCart(newCart);
+    }
+    
+    const handleChoseAgain = chosenProduct => {
+        const newCart = [];
+        setCart(newCart);
+    }
+
+    const handleChooseOne = chosenProduct => {
+        const randomIndex = Math.floor(Math.random() * 4);
+        const newCart = [...cart, chosenProduct];
+        const chosenItem = newCart.splice(randomIndex, 1);
+        setCart(chosenItem);
     }
 
     return (
@@ -35,6 +46,8 @@ const Shop = () => {
                 <Cart 
                     key={cart.id} 
                     cart={cart}
+                    handleChoseAgain={handleChoseAgain}
+                    handleChooseOne={handleChooseOne}
                 ></Cart>
             </div>
         </div>

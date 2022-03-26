@@ -1,22 +1,24 @@
-import { faRemove } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import CartItems from '../CartItems/CartItems';
 import './Cart.css'
 
-const Cart = ({cart}) => {
-    const {name, img} = cart; 
+const Cart = ({ cart, handleChoseAgain, handleChooseOne }) => {
+
+    if (cart.length >= 4) {
+        console.log('exceed');
+    }
+
     return (
         <div className='cart'>
             <h1>Selected Toys</h1>
             {
-                cart.map(item => <CartItems 
+                cart.map(item => <CartItems
                     key={item.id}
                     item={item}
                 ></CartItems>)
             }
-            <button className='cart-btn'>Choose one for me</button>
-            <button className='cart-btn'>Choose again!</button>
+            <button className='cart-btn' onClick={() => handleChooseOne()}>Choose one for me</button>
+            <button className='cart-btn' onClick={() => handleChoseAgain()}>Choose again!</button>
         </div>
     );
 };
