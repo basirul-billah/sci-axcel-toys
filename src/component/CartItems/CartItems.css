@@ -1,0 +1,23 @@
+.cart-items {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.cart-items p {
+    color: white;
+    font-weight: bold;
+}
+.cart-img {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+}
+.cart-items button {
+    border: none;
+    border-radius: 10%;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
