@@ -1,9 +1,12 @@
 import React from 'react';
+import './Cart.css'
 
 const Cart = () => {
     return (
-        <div>
-            <h1>Inside cart component</h1>
+        <div className='cart'>
+            <h1>Selected Toys</h1>
+            <button className='cart-btn'>Choose one for me</button>
+            <button className='cart-btn'>Choose again!</button>
         </div>
     );
 };

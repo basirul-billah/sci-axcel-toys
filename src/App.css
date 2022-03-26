@@ -1,8 +1,9 @@
 .App {
   text-align: left;
   margin-left: 25px;
+  
 }
 
-.App header > h1 {
+.App header h1 {
   color: #890085;
 }
