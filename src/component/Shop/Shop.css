@@ -6,5 +6,24 @@
 .products-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-row-gap: 45px;
+    grid-gap: 45px;
+}
+
+@media screen and (max-width: 700px) {
+    .shop-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .products-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 45px;
+        justify-content: center;
+        order: 1;
+    }
+
+    .cart-container {
+        margin-bottom: 45px;
+    }
 }
