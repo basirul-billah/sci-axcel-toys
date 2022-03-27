@@ -4,10 +4,6 @@ import './Cart.css'
 
 const Cart = ({ cart, handleChoseAgain, handleChooseOne }) => {
 
-    if (cart.length >= 4) {
-        console.log('exceed');
-    }
-
     return (
         <div className='cart'>
             <h1>Selected Toys</h1>

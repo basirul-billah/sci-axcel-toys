@@ -21,14 +21,15 @@ const Shop = () => {
             const newCart = [...cart, chosenProduct];
             setCart(newCart);
         }
-        console.log(cart);
     }
 
+    // if clicked Chose Again button, this function clears the cart
     const handleChoseAgain = chosenProduct => {
         const newCart = [];
         setCart(newCart);
     }
 
+    // generates a random number within 4 and stores it as an index. the newCart array is then cleared except the element of which index number was stored in randomIndex
     const handleChooseOne = chosenProduct => {
         const randomIndex = Math.floor(Math.random() * 4);
         const newCart = [...cart, chosenProduct];
