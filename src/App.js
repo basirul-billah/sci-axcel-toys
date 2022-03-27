@@ -1,13 +1,13 @@
 import './App.css';
 import Shop from './component/Shop/Shop';
+import Questions from './component/Questions/Questions'
 
 function App() {
   return (
     <div className="App">
-      <header>
-        <h1>Sci Axcel Toys!</h1>
-        <Shop></Shop>
-      </header>
+      <h1>Sci Axcel Toys!</h1>
+      <Shop></Shop>
+      <Questions></Questions>
     </div>
   );
 }

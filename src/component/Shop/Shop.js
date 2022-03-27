@@ -14,11 +14,16 @@ const Shop = () => {
             .then(data => setProducts(data))
     }, []);
 
+    // adds to cart. because cart is immutable a newCart is created and contents of cart is copied along with chosen product.
     const handleAddToCart = chosenProduct => {
-        const newCart = [...cart, chosenProduct];
-        setCart(newCart);
+        
+        if (cart.indexOf(chosenProduct) === -1 && cart.length <= 3) {
+            const newCart = [...cart, chosenProduct];
+            setCart(newCart);
+        }
+        console.log(cart);
     }
-    
+
     const handleChoseAgain = chosenProduct => {
         const newCart = [];
         setCart(newCart);
@@ -35,16 +40,16 @@ const Shop = () => {
         <div className="shop-container">
             <div className="products-container">
                 {
-                    products.map(product => <Product 
+                    products.map(product => <Product
                         key={product.id}
                         product={product}
-                        handleAddToCart = {handleAddToCart}
+                        handleAddToCart={handleAddToCart}
                     ></Product>)
                 }
             </div>
             <div className="cart-container">
-                <Cart 
-                    key={cart.id} 
+                <Cart
+                    key={cart.id}
                     cart={cart}
                     handleChoseAgain={handleChoseAgain}
                     handleChooseOne={handleChooseOne}
