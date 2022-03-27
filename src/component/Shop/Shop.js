@@ -31,7 +31,8 @@ const Shop = () => {
 
     // generates a random number within 4 and stores it as an index. the newCart array is then cleared except the element of which index number was stored in randomIndex
     const handleChooseOne = chosenProduct => {
-        const randomIndex = Math.floor(Math.random() * 4);
+        const length = cart.length;
+        const randomIndex = Math.floor(Math.random() * length);
         const newCart = [...cart, chosenProduct];
         const chosenItem = newCart.splice(randomIndex, 1);
         setCart(chosenItem);
